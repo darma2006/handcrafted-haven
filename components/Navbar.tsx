@@ -1,13 +1,20 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between bg-[#4B3621] px-8 py-4 text-white">
-      <h1 className="text-2xl font-bold">Handcrafted Haven</h1>
+    <nav className="bg-[#4B3621] text-white">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <h1 className="text-2xl font-bold">
+          Handcrafted Haven
+        </h1>
 
-      <div className="flex gap-6 text-lg">
-        <a href="/">Home</a>
-        <a href="/products">Products</a>
-        <a href="/seller">Sellers</a>
-        <a href="/login">Login</a>
+        <div className="flex gap-6">
+          <Link href="/">Home</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/seller">Sellers</Link>
+          <Link href="/login">Login</Link>
+          <Link href="/cart">Cart</Link>
+        </div>
       </div>
     </nav>
   );

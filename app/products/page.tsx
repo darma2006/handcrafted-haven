@@ -8,9 +8,23 @@ export default function ProductsPage() {
       </h1>
 
       <div className="grid gap-6 md:grid-cols-3">
-        <ProductCard title="Handmade Vase" price="$35" />
-        <ProductCard title="Crochet Plushie" price="$20" />
-        <ProductCard title="Wooden Bowl" price="$50" />
+        <ProductCard
+  title="Handmade Vase"
+  price="$35"
+  image="/images/vase.jpg"
+/>
+
+<ProductCard
+  title="Crochet Plushie"
+  price="$20"
+  image="/images/crochet.jpg"
+/>
+
+<ProductCard
+  title="Wooden Bowl"
+  price="$50"
+  image="/images/wood-bowl.jpg"
+/>
       </div>
     </main>
   );
