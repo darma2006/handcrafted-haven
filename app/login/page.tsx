@@ -3,23 +3,21 @@
 import { useState } from "react";
 import { authClient } from "@/lib/auth";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  async function handleRegister() {
-    const { error } = await authClient.auth.signUp({
+  async function handleLogin() {
+    const { error } = await authClient.auth.signInWithPassword({
       email,
       password,
     });
 
     if (error) {
-      setMessage("Registration failed: " + error.message);
+      setMessage("Login failed: " + error.message);
     } else {
-      setMessage(
-        "Account created! Please check your email to confirm your account."
-      );
+      setMessage("Login successful!");
     }
   }
 
@@ -27,7 +25,7 @@ export default function RegisterPage() {
     <main className="flex min-h-screen items-center justify-center bg-[#F5E9DA]">
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
         <h1 className="mb-6 text-3xl font-bold text-[#4B3621]">
-          Create Account
+          Login
         </h1>
 
         <input
@@ -47,10 +45,10 @@ export default function RegisterPage() {
         />
 
         <button
-          onClick={handleRegister}
+          onClick={handleLogin}
           className="w-full rounded-lg bg-[#4B3621] py-3 text-white"
         >
-          Register
+          Login
         </button>
 
         {message && (
