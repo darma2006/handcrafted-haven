@@ -1,19 +1,18 @@
 import ProductCard from "@/components/ProductCard";
-
-async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
-  }
-
-  return res.json();
-}
+import { supabase } from "@/lib/supabase";
 
 export default async function ProductsPage() {
-  const products = await getProducts();
+  const { data: products, error } = await supabase
+    .from("products")
+    .select("*");
+
+  if (error) {
+    return (
+      <main className="p-10">
+        <p>Error loading products: {error.message}</p>
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen bg-[#F5E9DA] p-10">
@@ -22,7 +21,7 @@ export default async function ProductsPage() {
       </h1>
 
       <div className="grid gap-6 md:grid-cols-3">
-        {products.map((product: any) => (
+        {products?.map((product) => (
           <ProductCard
             key={product.id}
             title={product.title}
