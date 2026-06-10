@@ -8,7 +8,7 @@ export default async function ProductsPage() {
 
   if (error) {
     return (
-      <main className="p-10">
+      <main className="min-h-screen p-10">
         <p>Error loading products: {error.message}</p>
       </main>
     );
