@@ -34,11 +34,19 @@ export default function ReviewsPage() {
           Leave a Review
         </h1>
 
-        <select
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          className="mb-4 w-full rounded border p-3"
-        >
+        <label
+  htmlFor="rating"
+  className="mb-1 block font-medium text-[#4B3621]"
+>
+  Rating
+</label>
+
+<select
+  id="rating"
+  value={rating}
+  onChange={(e) => setRating(e.target.value)}
+  className="mb-4 w-full rounded border p-3"
+>
           <option value="5">⭐⭐⭐⭐⭐ (5)</option>
           <option value="4">⭐⭐⭐⭐ (4)</option>
           <option value="3">⭐⭐⭐ (3)</option>
@@ -46,12 +54,19 @@ export default function ReviewsPage() {
           <option value="1">⭐ (1)</option>
         </select>
 
-        <textarea
-          placeholder="Write your review..."
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          className="mb-4 w-full rounded border p-3"
-        />
+        <label
+  htmlFor="comment"
+  className="mb-1 block font-medium text-[#4B3621]"
+>
+  Review
+</label>
+
+<textarea
+  id="comment"
+  value={comment}
+  onChange={(e) => setComment(e.target.value)}
+  className="mb-4 w-full rounded border p-3"
+/>
 
         <button
           onClick={submitReview}

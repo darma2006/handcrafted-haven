@@ -28,27 +28,36 @@ export default function CartPage() {
       <h1 className="mb-8 text-4xl font-bold text-[#4B3621]">
         Shopping Cart
       </h1>
-      <p className="mb-4">Items in cart: {cart.length}</p>
+      <p className="mb-6 text-lg text-[#4B3621]">
+  Items in cart: {cart.length}
+</p>
 
       {cart.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="text-lg text-gray-600">
+  Your cart is empty. Add some handmade treasures!
+</p>
       ) : (
         cart.map((item, index) => (
-          <div
-            key={index}
-            className="mb-4 rounded bg-white p-4 shadow"
-          >
-            <h2>{item.title}</h2>
-            <p>{item.price}</p>
+  <div
+    key={index}
+    className="mb-4 rounded-xl bg-white p-6 shadow-lg"
+  >
+    <h2 className="text-xl font-semibold text-[#4B3621]">
+      {item.title}
+    </h2>
 
-            <button
-              onClick={() => removeFromCart(index)}
-              className="mt-2 rounded bg-red-500 px-4 py-2 text-white"
-            >
-              Remove
-            </button>
-          </div>
-        ))
+    <p className="mt-2 text-lg text-[#C97B63]">
+      {item.price}
+    </p>
+
+    <button
+      onClick={() => removeFromCart(index)}
+      className="mt-4 rounded-lg bg-red-500 px-4 py-2 text-white transition hover:opacity-90"
+    >
+      Remove Item
+    </button>
+  </div>
+))
       )}
     </main>
   );

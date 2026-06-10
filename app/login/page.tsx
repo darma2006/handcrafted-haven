@@ -28,21 +28,35 @@ export default function LoginPage() {
           Login
         </h1>
 
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="mb-4 w-full rounded-lg border p-3"
-        />
+        <label
+  htmlFor="email"
+  className="mb-1 block font-medium text-[#4B3621]"
+>
+  Email
+</label>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="mb-4 w-full rounded-lg border p-3"
-        />
+<input
+  id="email"
+  type="email"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="mb-4 w-full rounded-lg border p-3"
+/>
+
+<label
+  htmlFor="password"
+  className="mb-1 block font-medium text-[#4B3621]"
+>
+  Password
+</label>
+
+<input
+  id="password"
+  type="password"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  className="mb-4 w-full rounded-lg border p-3"
+/>
 
         <button
           onClick={handleLogin}

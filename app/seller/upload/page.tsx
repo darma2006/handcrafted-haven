@@ -43,40 +43,60 @@ export default function UploadPage() {
           Upload Product
         </h1>
 
-        <input
-          className="mb-4 w-full rounded border p-3"
-          placeholder="Product Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+       <label htmlFor="title" className="mb-1 block font-medium">
+  Product Title
+</label>
 
-        <textarea
-          className="mb-4 w-full rounded border p-3"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+<input
+  id="title"
+  className="mb-4 w-full rounded border p-3"
+  value={title}
+  onChange={(e) => setTitle(e.target.value)}
+/>
 
-        <input
-          className="mb-4 w-full rounded border p-3"
-          placeholder="Price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
+        <label htmlFor="description" className="mb-1 block font-medium">
+  Description
+</label>
 
-        <input
-          className="mb-4 w-full rounded border p-3"
-          placeholder="Image URL"
-          value={imageUrl}
-          onChange={(e) => setImageUrl(e.target.value)}
-        />
+<textarea
+  id="description"
+  className="mb-4 w-full rounded border p-3"
+  value={description}
+  onChange={(e) => setDescription(e.target.value)}
+/>
 
-        <input
-          className="mb-4 w-full rounded border p-3"
-          placeholder="Seller Name"
-          value={sellerName}
-          onChange={(e) => setSellerName(e.target.value)}
-        />
+        <label htmlFor="price" className="mb-1 block font-medium">
+  Price
+</label>
+
+<input
+  id="price"
+  className="mb-4 w-full rounded border p-3"
+  value={price}
+  onChange={(e) => setPrice(e.target.value)}
+/>
+
+        <label htmlFor="imageUrl" className="mb-1 block font-medium">
+  Image URL
+</label>
+
+<input
+  id="imageUrl"
+  className="mb-4 w-full rounded border p-3"
+  value={imageUrl}
+  onChange={(e) => setImageUrl(e.target.value)}
+/>
+
+        <label htmlFor="sellerName" className="mb-1 block font-medium">
+  Seller Name
+</label>
+
+<input
+  id="sellerName"
+  className="mb-4 w-full rounded border p-3"
+  value={sellerName}
+  onChange={(e) => setSellerName(e.target.value)}
+/>
 
         <button
           onClick={handleSubmit}
